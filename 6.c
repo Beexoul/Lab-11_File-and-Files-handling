@@ -44,7 +44,7 @@ fwrite(students, sizeof(students), 10, file);
 rewind(file);
 printf("\nDisplaying the students:\n");
 printf("Roll No \t Name \t Address \t Faculty \t DOB\n");
-if(fread(students, sizeof(students), 10, file) == 1) {
+while(fread(students, sizeof(students), 10, file) == 1) {
 for (int i = 0; i < 10; i++) {
 if (strcmp(students[i].address, "Pokhara") != 0) {
 printf("%d \t %s \t %s \t %s \t %d/%d/%d\n", students[i].roll_no, students[i].name, students[i].address, students[i].faculty, students[i].dob.day, students[i].dob.month, students[i].dob.year);

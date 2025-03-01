@@ -33,7 +33,7 @@ for(i=0;i<5;i++){
 fwrite(&b,sizeof(b),5,fp);
 rewind(fp);
 printf("Name \t Price\n");
-if(fread(&b,sizeof(b),1,fp)==1){
+while(fread(&b,sizeof(b),1,fp)==1){
 for(i=0;i<2;i++){
     printf("%s \t %f\n",b[i].name,b[i].price);
 }
